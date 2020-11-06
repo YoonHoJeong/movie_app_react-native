@@ -13,9 +13,11 @@ const getHeaderName = (route) =>
   route?.state?.routeNames[route.state.index] || "Movies";
 
 export default ({ navigation, route }) => {
+  const name = getHeaderName(route);
+
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: getHeaderName(route),
+      title: name,
     });
   }, [route]);
   return (
